@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently \"npm run dev-prod\" \"npm run webpack-prod\"",
-    "dev": "nodemon --exec babel-node lib/server/server.js",
+    "dev": "concurrently \"npm run dev-prod\" \"npm run webpack\"",
     "dev-prod": "node lib/server/server.js",
     "webpack": "webpack -wd",
     "webpack-prod": "webpack",
