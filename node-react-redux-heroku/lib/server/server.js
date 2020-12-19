@@ -6,7 +6,14 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
+	res.json({
+		test: 'Test API'
+	});
+});
+
+// React router handles all other page and error routing
+app.get('*', (req, res) => {
 	res.render('index', {answer: 42});
 });
 
